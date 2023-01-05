@@ -1,0 +1,680 @@
+
+<style type="text/css">
+
+table.chartone, table tr.chartone, table td.chartone 
+    { border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; border: 0; }
+
+table.chartone td {
+    padding: 7px 7px 7px 7px;
+    border-spacing: 0;
+    border: #B4BED0 1px solid;
+    background-color: transparent;
+    }
+
+.chartone {
+    color: #000000;
+    font: normal 11px arial, sans-serif;
+    border: #000000 1px solid;
+    }
+
+table td.c1title {
+    color: #FFFFFF;
+    font: bold 14px arial, sans-serif;
+    background-color: #92A2C2;
+    }
+</style>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TempSAL - Uncovering Temporal Information for Deep Saliency Prediction">
+  <meta name="keywords" content="temporal, saliency">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TempSAL - Uncovering Temporal Information for Deep Saliency Prediction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" ></script>
+
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <!-- <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a> -->
+
+<!--       <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <span class="title is-1 publication-title">TempSAL - Uncovering Temporal Information for Deep Saliency Prediction</span>
+
+
+          <div class="is-size-5 publication-authors">
+            <span class= "title is-3"> Supplementary Material </span>
+            <!-- <span class="author-block">Supplementary Material</span> -->
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a >Anonymous CVPR submission - Paper ID 9736</a></span>
+          
+            </span>
+          </div>
+          <p style="margin-bottom:1cm;"></p>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#section-qualitative"
+                   class="external-link button is-normal is-rounded is-dark">
+        
+                  <span>Additional Qualitative Results</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#section-stats"
+                   class="external-link button is-normal is-rounded is-dark">
+           
+                  <span>Details on the Statistical Analysis</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#section-eq"
+                   class="external-link button is-normal is-rounded is-dark">
+                
+                  <span>Equal Duration vs Equal Distribution</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#section-fixation"
+                   class="external-link button is-normal is-rounded is-dark">
+             
+                  <span>Approximation of Fixation Timestamps</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+    
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> has-text-centered--> 
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-1">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this supplementary material, we provide additional qualitative results and ablation studies for our TempSAL method. The document is structured as follows:
+          </p>
+          <p>
+            <span class="link-block">
+                <a href="#section-qualitative"
+                   class="external-link button is-normal">
+                  <span> Section A : Additional Qualitative Results</span>
+                  </a>
+            </span> <br>
+            <span class="link-block">
+                <a href="#section-stats"
+                   class="external-link button is-normal">
+                  <span> Section B : Details on the Statistical Analysis</span>
+                  </a>
+            </span><br>
+            <span class="link-block">
+                <a href="#section-eq"
+                   class="external-link button is-normal">
+                  <span> Section C : Equal Duration vs Equal Distribution</span>
+                  </a>
+            </span><br>
+            <span class="link-block">
+                <a href="#section-fixation"
+                   class="external-link button is-normal">
+                  <span> Section D : Approximation of Fixation Timestamps</span>
+                  </a>
+            </span>
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-qualitative">A. Additional Qualitative Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We provide additional qualitative results for our model on the SALICON validation dataset. We use an animated image format due to the temporal nature of our results. Best viewed on screen.
+          </p>
+        </div>
+
+      <div class="container is-centered" >
+       <div  class="row">
+              <div class="inline-block"><div class="titleboxcontainer"> <div class="titlebox"> <p> Input image </p></div></div></div>
+              <div class="inline-block"><div class="titleboxcontainer"> <div class="titlebox"> <p> Ground truth </p></div></div></div>
+              <div class="inline-block"><div class="titleboxcontainer"> <div class="titlebox"> <p> TempSAL </p></div></div></div>
+       </div>
+
+       <div  class="row">
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000334509.jpg'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000334509_imgt.png'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000334509_final_bw.png'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> a) Image Saliency </p></div></div></div>
+        <div  class="row">
+       <div class="inline-block"><a><img src='./static/images/rowa.gif'  width="585"  height="144" ></a></div>
+      
+       <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> b) Temporal Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000514083.jpg'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000514083_imgt.png'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000514083_final_bw.png'  width="192"  height="144" ></a></div>
+              <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> c) Image Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+            <div class="inline-block"><a><img src='./static/images/rowd.gif'  width="585"  height="144" ></a></div>
+
+              <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> d) Temporal Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000286553.jpg'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000286553_imgt.png'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000286553_final_bw.png'  width="192"  height="144" ></a></div>
+              <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> e) Image Saliency </p></div></div></div>
+       </div>
+        <div  class="row">
+             <div class="inline-block"><a><img src='./static/images/rowf.gif'  width="585"  height="144" ></a></div>
+
+              <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> f) Temporal Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000276893.jpg'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000276893_imgt.png'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000276893_final_bw.png'  width="192"  height="144" ></a></div>
+                     <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> g) Image Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+             <div class="inline-block"><a><img src='./static/images/rowh.gif'  width="585"  height="144" ></a></div>
+
+              <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> h) Temporal Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000191691.jpg'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000191691_imgt.png'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000191691_final_bw.png'  width="192"  height="144" ></a></div>
+                     <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> i) Image Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+              <div class="inline-block"><a><img src='./static/images/rowj.gif'  width="585"  height="144" ></a></div>
+
+              <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> j) Temporal Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000082174.jpg'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000082174_imgt.png'  width="192"  height="144" ></a></div>
+       <div class="inline-block"><a><img src='./static/images/additional-results/COCO_val2014_000000082174_final_bw.png'  width="192"  height="144" ></a></div>
+                     <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> k) Image Saliency </p></div></div></div>
+
+       </div>
+        <div  class="row">
+             <div class="inline-block"><a><img src='./static/images/rowl.gif'  width="585"  height="144" ></a></div>
+
+              <div class="inline-block"><div class="tableboxcontainer"> <div class="tablebox"> <p> l) Temporal Saliency </p></div></div></div>
+
+       </div>
+      </div><br>
+      <div class="content has-text-justified">
+          <p>
+            Figure 8. Image saliency and temporal saliency predictions with their respective ground truths from the SALICON dataset. Black-and-white maps are the image saliency maps for the whole observation duration. Red-yellow maps are the temporal saliency maps for one-second intervals. Our model can predict the temporal saliency of each slice and track attention shifts between regions over time. For input images a) and c), the men are initially salient, then the attention shifts to the inanimate objects. That is, the food and the skateboard become more salient afterwards. In row e), people look at the man on the left first, then at the woman on the right, and eventually at the food. Our model is able to follow these transitions. Similarly, in rows g) and i), the attention is focused on the humans first, then shifts towards the book and the faucet on the right. We are able to capture these shifts in our predictions. In comparison, there are fewer shifts in row l). However, in the first second of observation, the bird on the left is the most salient region in the image, which is also successfully detected by our model.
+        </div>
+      
+      </div>
+
+      
+       </div>
+    </div>
+
+<!-- Begining of details on statistical analysis -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-stats">B. Details on the Statistical Analysis</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this section, we provide details on the calculations presented in Section 3.2 of our paper. We aim to observe the evolution of attention over time and discover temporal patterns in the data.
+          </p>
+        </div>
+        <h2 class="title is-4" >B.1 Inter-slice similarity across time</h2>
+        <div style="float:left;">
+        We calculate the correlation coefficient between slices  \(\mathcal{T}_j\), and \(\mathcal{T}_k\) as :</div><br>
+         $$\mathrm{CC}(\mathcal{T}_j,\mathcal{T}_k) = \frac{1}{N}\sum_{i=0}^{N} \mathrm{CC}(\mathcal{T}_{ij},\mathcal{T}_{ik}) ,\quad j,k \in \{1,\ldots,5\},$$
+         <div style="float:left;">  \(N\) is the total number of images, and \( \mathcal{T}_{ij}\)  and  \(\mathcal{T}_{ik}\) denote the \(j^{th} \) and \(k^{th}\) slice of the \(i^{th}\) image. We illustrate the similarity calculation of slice \( \mathcal{T}_{1}\) with the other slices for a single picture as follows: </div>
+        <div class="inline-block"><img src='./static/images/across-time.png'   > <br>
+          <figcaption> Figure 9. Calculation of CC score for slice \( \mathcal{T}_{1}\) of Image \( \mathcal{I}_{i}\). </figcaption> </div>  <br> <br>
+        <div class="content has-text-justified"> 
+        By performing the same calculation over the \(N\) images, we obtain \(N\) comparisons for each slice pair \(\mathcal{T}_j\), and \(\mathcal{T}_k\)  which are denoted by the arrows in Figure 9.
+
+       As a result, we can determine whether the difference between these comparisons is statistically significant. On these pairwise comparisons, we compute t-test scores with \(N=\) 10000 samples in each comparison. Table 8 displays the correlation coefficients and standard error values for each pair of slices.</div>
+       <div class="inline-block"><a><img src='./static/images/sterror-acrosstime.png'   ></a>          <br>
+        <figcaption class="content has-text-justified"> Table 8. Correlation coefficients with the standard error values for each pair of slices. The bold values indicate the slices most similar to each other. The highlights indicate statistically insignificant differences. </figcaption>   
+
+
+       </div><br><br>
+
+
+
+         <div class="content has-text-justified">  With the exception of \( (\mathcal{T}_{1},\mathcal{T}_{3} )\) and \(( \mathcal{T}_{1},\mathcal{T}_{5}) \), we find that every difference is statistically significant \((p<0.01)\). That is, CC scores for the majority of the pairs come from different distributions with different mean values. This shows a difference in the slices that we exploit to predict temporal saliency and consequently to improve the overall image saliency prediction.
+         </div><br>
+
+<h2 class="title is-4" >B.2 Intra-slice similarity across images</h2>
+<div class="content has-text-justified"> We also investigate the deviation of each slice from its respective average slice. We compute CC scores between a single slice and the corresponding average slice as:
+     $$\mathrm{CC}(\mathcal{T}_j,A_j) = \frac{1}{N}\sum_{i=0}^{N} \mathrm{CC}(\mathcal{T}_{ij},A_{j}) ,\quad j \in \{1,\ldots,5\},$$
+where \(A_j\) denotes the \(j^{th}\) average slice. For a single image, we illustrate the similarity calculation of all slices with the average ones as follows:   </div> 
+    
+
+        <div class="inline-block"><img src='./static/images/intra-slice.png'   >           <figcaption> Figure 10. Calculation of CC scores for all slices of Image \( \mathcal{I}_{i}\). </figcaption> </div>  <br> <br>
+
+        <div class="content has-text-justified"> 
+        By performing the same calculation over the \(N\) images, we obtain \(N\) comparisons for each slice pair \(\mathcal{T}_k\), and \(\mathcal{A}_k\)  which are shown by the arrows in Figure 10.
+
+
+         Similar to the previous section, we determine the statistical significance difference between these comparisons. We compute t-test scores with \(N=\)10000 samples. Table 9 displays the correlation coefficients and standard error values.</div>
+
+
+        <div> <div class="inline-block"><img src='./static/images/avg-eq-dur.png'   >  <figcaption class="content has-text-justified"> Table 9. CC scores for all slices with the corresponding average slices. This table is also included in the main paper as Table 2 without the standar error values. </figcaption> </div>  <br> <br></div>
+
+        <div class="content has-text-justified">   In this case, we find that all comparisons are statistically significantly different from each other \((p<0.01)\). Note that \(\mathcal{T}_1\) has the highest CC value. This means that it is the most similar slice to its respective average slice which suggests that the subjects tend to look at the similar locations at the first second of observation.  The other slices \(\mathcal{T}_2,\mathcal{T}_3,\mathcal{T}_4,\mathcal{T}_5\), have lower CC values with their respective average slices thus representing a greater variety.
+           </div>
+
+      </div>
+
+      </div>
+    </div>
+<!-- End of details on statistical analysis -->
+
+
+
+<!-- Begining of details on fixation approximantion -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-eq">C. Equal Duration vs Equal Distribution</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified">
+            The SALICON dataset contains over 4.9M fixation points distributed across 5 seconds of observation time. Figure 11 shows the distribution of fixations over time.
+            <center>
+            <div class="inline-block"><a><img src='./static/images/all-fix.png'  width="400"  ></a> <figcaption> Figure 11. Number of fixations with their timestamps. </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
+            We represent temporal saliency by dividing fixations into time slices. Too many slices of data increase in-slice variance, reduce the number of fixations per slice, and hence reduce predictability. Using too few slices, on the other hand, restricts the observation of attention shifts. Therefore, we use one-second intervals due to their interpretability and in reference to the Codecharts<a href="#reffosco">[1]</a> method, which collects data in one-second increments. 
+            The "Equal duration" slice format simply divides the data into equal-duration time intervals. In Section 3.2, we have used this slicing with a duration of one second. This fixation processing approach is straightforward to comprehend. It does not, however, provide any guarantee on the sampling balance between the slices. 
+
+            As seen from Figure 11, the number of fixations in the first second are less than the consecutive seconds. Therefore, we also consider an "Equal distribution" slice format to have equal sample probability and correct the small skew in the fixation distribution. We illustrate these slicing alternatives with five red boxes indicating the number of slices in Figure 12 a) and b).  </div>
+            <center>   
+            <div class="inline-block"><a><img src='./static/images/eq-time-times.png'  width="300"  ></a><figcaption> a) </figcaption></div>
+            <div class="inline-block"><a><img src='./static/images/eq-dist-times.png'  width="300"  ></a><figcaption> b) </figcaption></div>
+            <div class="inline-block"><a><img src='./static/images/eq-time-num.png'  width="300"  ></a><figcaption> c) </figcaption></div>
+            <div class="inline-block"><a><img src='./static/images/eq-dist-num.png'  width="300"  ></a><figcaption> d) </figcaption></div>
+            </center>
+            <div ><figcaption class="content has-text-justified" > Figure 12. a) Time intervals of equal duration slicing; b) Time intervals of equal distribution slicing; c) Number of fixations per slice in equal duration slicing; d) Number of fixations per slice in equal distribution slicing. Note that equal duration slicing has uniform time intervals as shown in a), while equal distribution slicing has equal number of samples in each slice as shown in d). </figcaption> </div> <br>
+            <div > We show the boundaries of each temporal slice for two slicing alternatives in Table 10. </div> 
+            <div class="inline-block"><a><img src='./static/images/times-table.png'  width="600"  ></a><figcaption> Table 10. Time intervals for the two different slicing methods </figcaption></div><br><br>
+            <div class="content has-text-justified">The time division of equal distribution slices is almost identical to that formed by equal duration method. The greatest difference between the two methods is in the first slice. Therefore, we conduct a similar statistical analysis as in Section 3.2 with the equal distribution slices. Table 11 displays the correlation coefficients and standard error values for each pair of slices. </div>
+
+            <div class="inline-block"><a><img src='./static/images/eq-dist-table.png'  width="600"  ></a><figcaption class="content has-text-justified"> Table 11. Correlation coefficients with the standard error values for each pair of slices with equal distribution method. The highlights indicate statistically insignificant differences.</figcaption></div> &emsp; &emsp;
+            <div class="content has-text-justified"> We calculate t-test scores for pairwise comparisons as in Section B.1. We also find the difference between \(( \mathcal{T}_{2},\mathcal{T}_{3}) \) and \(( \mathcal{T}_{4},\mathcal{T}_{5}) \) is not statistically significant. Moreover, Table 11 displays the correlation coefficients and standard error values which we calculate as in Section B.2. </div>
+            <div class="inline-block"><a><img src='./static/images/avg-eq-dist.png'  width="600"  ></a><figcaption class="content has-text-justified"> Table 12.  CC scores for all slices with the corresponding average slices with equal distribution method.  The bold values indicate the slices most similar to each other.</figcaption></div> 
+            <div class="content has-text-justified"> The mean values are closer to each other than the mean values in the equal duration method which are shown in Table 9. This can be explained by the balanced number of samples in each slice.</div>
+      </div>
+
+      </div>
+    </div>
+<!-- End of details fixation approximation -->
+
+<!-- Begining of equal duration vs distribution -->
+</section >
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-fixation">D. Approximation of Fixation Timestamps</h2>
+        <div class="content has-text-justified">
+          <p>
+            The SALICON dataset provides saliency maps, fixations, and gaze points for each image and observer. Following common practice in eye tracking experiments, Jiang et al.<a href="#refsalicon">[2]</a> grouped spatially and temporally close gaze points to create fixations. Since these fixations were created by grouping multiple gaze points, they do not have a particular timestamp. SALICON-MD<a href="#reffosco">[1]</a> assumes that the fixations are uniformly distributed across the total viewing time. We use a finer approximation for recovering the fixations’ timestamps by minimizing the spatial and temporal distance between a fixation and the nearest gaze point. Here, we provide the details of our approximation.</p>
+
+            <p> A simple approach to this problem is to match the raw gaze point in space that is closest to the fixation point. This approach is as follows:</p>
+      $$f_{t s}=\underset{p_{t s}, \forall p \in \text { GazePoints } }{\operatorname{argmin}}\left\|f_{x y}-p_{x y}\right\|^{2}$$
+             <p>
+              where \(f_{ts}\) is the desired fixation timestamp and \(f_{xy}\) and \(p_{xy}\) are the spatial coordinates of the fixation and gazepoint, respectively.
+              Although this simple spatial attribution has a good matching according to our initial experiments, it does not account for the temporal "boomerang" patterns. The gaze tends to focus first on the most prominent part of the image in a boomerang pattern before investigating the context and returning to the initial attention location <a href="#reffosco">[1]</a>. Therefore, this effect produces gaze points close in space but far away in time.
+
+            To avoid this issue, we used the fact that the fixations are sorted chronologically in the dataset. Assuming a uniform fixation distribution throughout time corresponds to the timestamp assignment \(f_{ts}\) :</p>
+            $$f_{t s}=5000 * \frac{(\text { index }+1)} {(\text{# of fixations} +1)}$$
+            <p> where total observation time is 5000 milliseconds, index is the fixation's occurrence order, and # of fixations is the total number of fixations in the image. 
+
+            The first method only considers the spatial distance while the second one only considers the temporal distance. 
+            Neither of them takes into account all available information. We combine these two approaches for a more accurate spatio-temporal timestamp approximation. For a given fixation, we compute a distance score for each gaze point. We assign the timestamp of the spatially closest gaze point to the given fixation. Then, we calculate \(p_{score}\) as follows, where \(w\) the weighting factor responsible for balancing the difference in time \(p_{time\_diff}\) and distance in space \(p_{space\_dist}\):</p>
+            $$p_{\text {space}_{-} d i s t}=\left\|f_{x y}-p_{x y}\right\|^{2}$$
+            $$p_{\text{time}_{-} diff}=\left|p_{t s}- f_{t s}\right| $$
+          $$p_{\text {score}}=p_{\text{space}_{-}dist}+w * p_{\text {time}_{-}diff}$$
+          $$f_{t s}=\underset{p_{t s}, \forall p \in \text { GazePoints }}{\operatorname{argmin}} p_{\text {score }}$$
+          <p>where \(p_{t s}\) denotes timestamp of a gazepoint. This requires the optimization of the weighting factor \(w\). Over the 10000 training samples in the SALICON dataset, we emprically found that \(w=\)0.017 is the best weighting factor between spatial and temporal distances. </p>
+
+
+
+
+<a href="#" > Back to the top</a>
+      </div>
+
+      </div>
+    </div>
+<!-- End ofdetails on fixation approximantion  -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-fixation">References</h2>
+        <div class="content has-text-justified" id="reffosco">
+[1] Camilo Fosco, Anelise Newman, Pat Sukhum, Yun Bin
+Zhang, Nanxuan Zhao, Aude Oliva, and Zoya Bylinskii.
+How much time do you have? modeling multi-duration
+saliency. In <i>IEEE/CVF Conference
+on Computer Vision and Pattern Recognition</i>, 2020. </div>
+<div class="content has-text-justified" id="refsalicon">
+[2] Ming Jiang, Shengsheng Huang, Juanyong Duan, and Qi
+Zhao. SALICON: Saliency in context. <i>In IEEE/CVF Conference
+on Computer Vision and Pattern Recognition</i>, 2015.
+
+      </div>
+</div>
+      </div>
+    </div>
+
+
+    <div>
+
+    </div>
+
+
+  
+  </div>
+</section>
+
+
+
+<!--       <div class="column">
+        <h2 class="title is-3">Matting</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div> -->
+    </div>
+    <!--/ Matting. -->
+
+    <!-- Animation. -->
+  <!--   <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Animation</h2>
+ -->
+        <!-- Interpolating. -->
+        <!-- <h3 class="title is-4">Interpolating states</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="https://homes.cs.washington.edu/~kpar/nerfies/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/> -->
+        <!--/ Interpolating. -->
+
+
+
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+
+    
+  </div>
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="">
+        <i class="fas fa-file-pdf"></i>
+
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This template is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> .
+           
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
