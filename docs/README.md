@@ -4,6 +4,7 @@ We will relase the code on this repository upon publication.
 
 Paper link : https://arxiv.org/abs/2301.02315
 
+Project page and Supplementary material : https://baharay.github.io/tempsal/
 
 
 ![teaser-updated](https://user-images.githubusercontent.com/16324609/211349283-4cd56e79-80c9-4c5e-8181-f5c73b649870.png)
