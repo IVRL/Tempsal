@@ -2,7 +2,12 @@
 
 We will relase the code on this repository upon publication.
 
+Paper link : https://arxiv.org/abs/2301.02315
 
+
+
+![teaser-updated](https://user-images.githubusercontent.com/16324609/211349283-4cd56e79-80c9-4c5e-8181-f5c73b649870.png)
+An example of how human attention shifts over time. We show the input image and the corresponding image saliency ground truth from the SALICON dataset. Notice that in $\mathcal{T_1}$, the cook is salient, while in $\mathcal{T_2}$ and $\mathcal{T_3}$, the food on the barbecue becomes the most salient region in this scene. We can predict saliency maps in these sequential time intervals as well as combine them into a refined single image saliency map for the whole observation duration.
 
 
 
