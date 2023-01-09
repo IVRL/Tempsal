@@ -1,6 +1,6 @@
 # TempSAL - Uncovering Temporal Information for Deep Saliency Prediction
 
-This page contains the supplementary material for TempSAL - Uncovering Temporal Information for Deep Saliency Prediction.  Best viewed on Google Chrome.
+We will relase the code on this repository upon publication.
 
 
 
