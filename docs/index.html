@@ -158,7 +158,7 @@ table td.c1title {
               <span class="link-block">
                 <a href="#section-results-eq"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span>Results of Equal Distribution Model</span>
+                  <span>Results the Slicing Alternatives</span>
                   </a>
               </span>                
               <!-- Code Link. -->
@@ -293,7 +293,7 @@ table td.c1title {
             <span class="link-block">
                 <a href="#section-results-eq"
                    class="external-link button is-normal">
-                  <span> Section D : Results of two slicing alternatives</span>
+                  <span> Section D : Results the Slicing Alternatives</span>
                   </a>
             </span><br>            
                  
@@ -534,7 +534,7 @@ where \(A_j\) denotes the \(j^{th}\) average slice. For a single image, we illus
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" id="section-eq">D. Results of the Equal Distribution</h2>
+        <h2 class="title is-3" id="section-results-eq">D. Results the Slicing Alternatives</h2>
         <div class="content has-text-justified">
           <p class="content has-text-justified">
             We break down the fixations into time slices with two time-slicing alternatives, namely equal duration and equal distribution we describe in the previous section.
@@ -551,7 +551,32 @@ where \(A_j\) denotes the \(j^{th}\) average slice. For a single image, we illus
 <!-- End of details fixation approximation -->
     
     
-    
+    <!-- Begining of details on fixation approximantion -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-numslices">D. Number of time slices</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified">
+            We break down the fixations into different number of time slices as an ablation study. We train the models using their respective number number of slices and evaluate on image saliency. The results are presented in Table 14. 
+            <center>
+            <div class="inline-block"><a><img src='./static/images/equal-dist-vs-equal-dur-results.png'  width="600"  ></a> <figcaption> </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
+            
+            <div ><figcaption class="content has-text-justified" > Table 14. Effect of the number of different time slices on SALICON validation dataset. When
+we increase the number of slices, the number of fixations
+per slice decreases. Therefore, the time slices and their predictions
+become noisy. Training our network with 10 time
+slices yields the following results on the SALICON benchmark:
+Training with 3 or 4 slices yields results similar to using 5 slices, which shows that
+our approach is not highly sensitive to this number. </div> 
+
+      </div>
+
+      </div>
+    </div>
+<!-- End of details fixation approximation -->    
     
     
     
