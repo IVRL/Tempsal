@@ -9,7 +9,7 @@ We will relase the code on this repository upon publication.
 
 Paper link : https://arxiv.org/abs/2301.02315
 
-Project page and Supplementary material : https://baharay.github.io/tempsal/
+Project page and Supplementary material : https://ivrl.github.io/Tempsal/
 
 
 
