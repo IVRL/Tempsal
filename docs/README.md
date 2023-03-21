@@ -1,8 +1,7 @@
 # TempSAL - Uncovering Temporal Information for Deep Saliency Prediction
 
-![teaser-updated](https://user-images.githubusercontent.com/16324609/211349283-4cd56e79-80c9-4c5e-8181-f5c73b649870.png)
-An example of how human attention evolves over time. Top row: \textbf{\textcolor{orange}{Temporal}} and \textbf{\textcolor{mypink}{image}} saliency ground truth from the SALICON dataset~\cite{salicon}. Bottom row: Our \textbf{\textcolor{myorange}{temporal}} and \textbf{\textcolor{mypink}{image}}  saliency predictions. Each temporal saliency map $\mathcal{T}_i$, $i \in \{1,\ldots,5\}$ represents one second of observation time. Note that in $\mathcal{T}_1$, the chef is salient, while in  $\mathcal{T}_2$ and  $\mathcal{T}_3$, the food on the barbecue becomes the most salient region in this scene. We can predict the temporal saliency maps for each interval separately, or combine them to create a single, refined image saliency map for the entire observation period.  
 ![teaser-colord](https://user-images.githubusercontent.com/16324609/226619656-7aca1b74-0746-4524-9a5b-cd71698d30ce.png)
+An example of how human attention evolves over time. Top row: <span style="color:blue">Temporal</span>. and \textbf{\textcolor{mypink}{image}} saliency ground truth from the SALICON dataset~\cite{salicon}. Bottom row: Our \textbf{\textcolor{myorange}{temporal}} and \textbf{\textcolor{mypink}{image}}  saliency predictions. Each temporal saliency map $\mathcal{T}_i$, $i \in \{1,\ldots,5\}$ represents one second of observation time. Note that in $\mathcal{T}_1$, the chef is salient, while in  $\mathcal{T}_2$ and  $\mathcal{T}_3$, the food on the barbecue becomes the most salient region in this scene. We can predict the temporal saliency maps for each interval separately, or combine them to create a single, refined image saliency map for the entire observation period.  
 
 
 
