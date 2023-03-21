@@ -524,13 +524,53 @@ where \(A_j\) denotes the \(j^{th}\) average slice. For a single image, we illus
     </div>
 <!-- End of details fixation approximation -->
 
+    
+    
+    
+    
+    <!-- Begining of details on fixation approximantion -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" id="section-eq">D. Results of the Equal Distribution</h2>
+        <div class="content has-text-justified">
+          <p class="content has-text-justified">
+            We break down the fixations into time slices with two time-slicing alternatives, namely equal duration and equal distribution.
+ The equal duration method groups the fixations based on their timestamps. Each slice has a different total number of fixations. On the other hand, the equal distribution method groups an equal number of fixations in each slice. Therefore, the duration of each slice is different from that of the other ones. We provide more details on the slicing methods in the supplementary material. We train and evaluate two models using both sampling methods. The results are presented in Table~\ref{tab:slicing}. 
+            <center>
+            <div class="inline-block"><a><img src='./static/images/equal-dist-vs-equal-dur-results.png.png'  width="400"  ></a> <figcaption> Figure 11. Number of fixations with their timestamps. </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
+            
+            <div ><figcaption class="content has-text-justified" > Figure 12.Results of the equal distribution model (first column) and the equal duration one (second column) across different time slices.  </div> 
+            <div class="inline-block"><a><img src='./static/images/times-table.png'  width="600"  ></a><figcaption> Table 10. Time intervals for the two different slicing methods </figcaption></div><br><br>
+            <div class="content has-text-justified">The equal distribution model includes an equal number of fixations per slice. 
+%  The equal duration model achieves better results in 13 out of 20 comparisons.  </div>
+
+      </div>
+
+      </div>
+    </div>
+<!-- End of details fixation approximation -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 <!-- Begining of equal duration vs distribution -->
 </section >
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" id="section-fixation">D. Approximation of Fixation Timestamps</h2>
+        <h2 class="title is-3" id="section-fixation">F. Approximation of Fixation Timestamps</h2>
         <div class="content has-text-justified">
           <p>
             The SALICON dataset provides saliency maps, fixations, and gaze points for each image and observer. Following common practice in eye tracking experiments, Jiang et al.<a href="#refsalicon">[2]</a> grouped spatially and temporally close gaze points to create fixations. Since these fixations were created by grouping multiple gaze points, they do not have a particular timestamp. SALICON-MD<a href="#reffosco">[1]</a> assumes that the fixations are uniformly distributed across the total viewing time. We use a finer approximation for recovering the fixations’ timestamps by minimizing the spatial and temporal distance between a fixation and the nearest gaze point. Here, we provide the details of our approximation.</p>
