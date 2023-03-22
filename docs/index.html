@@ -168,7 +168,7 @@ table td.c1title {
               <span class="link-block">
                 <a href="#section-results-eq"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span>Results the Slicing Alternatives</span>
+                  <span>Results of the Slicing Alternatives</span>
                   </a>
               </span>                
               <!-- Code Link. -->
@@ -303,7 +303,7 @@ table td.c1title {
             <span class="link-block">
                 <a href="#section-results-eq"
                    class="external-link button is-normal">
-                  <span> Section D : Results the Slicing Alternatives</span>
+                  <span> Section D : Results of the Slicing Alternatives</span>
                   </a>
             </span><br>            
                  
@@ -545,13 +545,13 @@ where \(A_j\) denotes the \(j^{th}\) average slice. For a single image, we illus
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full">
-        <h2 class="title is-3" id="section-results-eq">D. Results the Slicing Alternatives</h2>
+        <h2 class="title is-3" id="section-results-eq">D. Results of the Slicing Alternatives</h2>
         <div class="content has-text-justified">
           <p class="content has-text-justified">
             We break down the fixations into time slices with two time-slicing alternatives, namely equal duration and equal distribution as we describe in the previous section.
  The equal duration method groups the fixations based on their timestamps. Each slice has a different total number of fixations. On the other hand, the equal distribution method groups an equal number of fixations in each slice. Therefore, the duration of each slice is different from that of the other ones. We train and evaluate two models using both sampling methods. The results are presented in Table 13. 
             <center>
-            <div class="inline-block"><a><img src='./static/images/equal-dist-vs-equal-dur-results.png'  width="600"  ></a> <figcaption> </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
+            <div class="inline-block"><a><img src='./static/images/equal-dist-vs-equal-dur-results.png'  width="500"  ></a> <figcaption> </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
             
             <div ><figcaption class="content has-text-justified" > Table 13. Results of the equal distribution model (first column) and the equal duration one (second column) across different time slices. The equal distribution model includes an equal number of fixations per slice.  The equal duration model achieves better results in 13 out of 20 comparisons. </div> 
 
@@ -571,9 +571,9 @@ where \(A_j\) denotes the \(j^{th}\) average slice. For a single image, we illus
         <h2 class="title is-3" id="section-numslice">E. The Number of Time Slices</h2>
         <div class="content has-text-justified">
           <p class="content has-text-justified">
-            We break down the fixations into different number of time slices as an ablation study. We train the models using their respective number number of slices and evaluate on image saliency. The results are presented in Table 14. 
+            We break down the fixations into different number of time slices as an ablation study as we mention in Section 5.7 of our paper. We train the models using their respective number number of slices and evaluate on image saliency. The results are presented in Table 14. 
             <center>
-            <div class="inline-block"><a><img src='./static/images/num-time-slices.png'  width="600"  ></a> <figcaption> </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
+            <div class="inline-block"><a><img src='./static/images/num-time-slices.png'  width="500"  ></a> <figcaption> </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
             
             <div ><figcaption class="content has-text-justified" > Table 14. Effect of the number of different time slices on SALICON validation dataset. 
                 When we increase the number of slices, the number of fixations per slice decreases. Therefore, the time slices and their predictions become noisy. 
