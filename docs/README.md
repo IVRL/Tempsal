@@ -18,7 +18,7 @@ We will relase the code on this repository upon publication.
 If you make use of our work, please cite our paper:
 
 ```
-@InProceedings{pajouheshgar2022dynca,
+@InProceedings{aydemir2023tempsal,
   title     = {TempSAL - Uncovering Temporal Information for Deep Saliency Prediction},
   author    = {Aydemir, Bahar and Hoffstetter, Ludo and Zhang, Tong and Salzmann, Mathieu and S{\"u}sstrunk, Sabine},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
