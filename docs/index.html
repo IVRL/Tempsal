@@ -165,7 +165,7 @@ table td.c1title {
               <span class="link-block">
                 <a href="#section-numslice"
                    class="external-link button is-normal is-rounded is-dark">
-                  <span>Number of time slices</span>
+                  <span>The Number of Time Slices</span>
                   </a>
               </span>
               <span class="link-block">
@@ -300,7 +300,7 @@ table td.c1title {
             <span class="link-block">
                 <a href="#section-numslice"
                    class="external-link button is-normal">
-                  <span> Section E :  Number of time slices </span>
+                  <span> Section E : The Number of Time Slices </span>
                   </a>
             </span><br>        
               
@@ -558,20 +558,17 @@ where \(A_j\) denotes the \(j^{th}\) average slice. For a single image, we illus
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" id="section-numslices">D. Number of time slices</h2>
+        <h2 class="title is-3" id="section-numslices">E. The Number of Time Slices</h2>
         <div class="content has-text-justified">
           <p class="content has-text-justified">
             We break down the fixations into different number of time slices as an ablation study. We train the models using their respective number number of slices and evaluate on image saliency. The results are presented in Table 14. 
             <center>
-            <div class="inline-block"><a><img src='./static/images/equal-dist-vs-equal-dur-results.png'  width="600"  ></a> <figcaption> </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
+            <div class="inline-block"><a><img src='./static/images/num-time-slices.png'  width="600"  ></a> <figcaption> </figcaption> </div>  <br> </div></center><div class="content has-text-justified">
             
-            <div ><figcaption class="content has-text-justified" > Table 14. Effect of the number of different time slices on SALICON validation dataset. When
-we increase the number of slices, the number of fixations
-per slice decreases. Therefore, the time slices and their predictions
-become noisy. Training our network with 10 time
-slices yields the following results on the SALICON benchmark:
-Training with 3 or 4 slices yields results similar to using 5 slices, which shows that
-our approach is not highly sensitive to this number. </div> 
+            <div ><figcaption class="content has-text-justified" > Table 14. Effect of the number of different time slices on SALICON validation dataset. 
+                When we increase the number of slices, the number of fixations per slice decreases. Therefore, the time slices and their predictions become noisy. 
+                We observe a decrease in the performance as the number of the time slices increases. 
+                However, training with 3 or 4 slices yields results similar to using 5 slices, which shows that our approach is not highly sensitive to this number. </div> 
 
       </div>
 
