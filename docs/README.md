@@ -12,6 +12,25 @@ Project page and Supplementary material : https://ivrl.github.io/Tempsal/
 
 We will relase the code on this repository upon publication.
 
+## Citation
+
+If you make use of our work, please cite our paper:
+
+```
+@InProceedings{pajouheshgar2022dynca,
+  title     = {TempSAL - Uncovering Temporal Information for Deep Saliency Prediction},
+  author    = {Aydemir, Bahar and Hoffstetter, Ludo and Zhang, Tong and Salzmann, Mathieu and S{\"u}sstrunk, Sabine},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2023},
+}
+```
+
+
+
+
+
+
+
 
 # Website License
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
