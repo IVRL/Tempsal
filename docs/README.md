@@ -7,7 +7,7 @@ An example of how human attention evolves over time. Top row: Temporal (shown in
 
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-2301.02315-b31b1b.svg)](https://arxiv.org/abs/2301.02315)
+Paper: [![arXiv](https://img.shields.io/badge/arXiv-2301.02315-b31b1b.svg)](https://arxiv.org/abs/2301.02315)
 
 Project page and Supplementary material : https://ivrl.github.io/Tempsal/
 
@@ -21,7 +21,7 @@ If you make use of our work, please cite our paper:
 @InProceedings{pajouheshgar2022dynca,
   title     = {TempSAL - Uncovering Temporal Information for Deep Saliency Prediction},
   author    = {Aydemir, Bahar and Hoffstetter, Ludo and Zhang, Tong and Salzmann, Mathieu and S{\"u}sstrunk, Sabine},
-  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2023},
 }
 ```
