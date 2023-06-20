@@ -9,9 +9,10 @@ An example of how human attention evolves over time. Top row: Temporal (shown in
 
 Paper: [![arXiv](https://img.shields.io/badge/arXiv-2301.02315-b31b1b.svg)](https://arxiv.org/abs/2301.02315)
 
-Project page and Supplementary material : https://ivrl.github.io/Tempsal/
+Project page and Supplementary material: https://ivrl.github.io/Tempsal/
 
-We will relase the code on this repository upon publication.
+For temporal saliency training and predictions, see:
+https://github.com/LudoHoff/TemporalSaliencyPrediction
 
 ## Citation
 
