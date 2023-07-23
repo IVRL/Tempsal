@@ -10,6 +10,12 @@ Paper: (https://arxiv.org/abs/2301.02315)
 
 Project page and Supplementary material: https://ivrl.github.io/Tempsal/
 
+# Installing required packages
+
+Install the packages with pip using the following command under src/ folder.
+
+```pip install -r requirements.txt```
+
 # Inference
 Download the model checkpoint from:
 https://drive.google.com/drive/folders/1W92oXYra_OPYkR1W56D80iDexWIR7f7Z?usp=sharing 
