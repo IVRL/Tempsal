@@ -7,11 +7,10 @@ from einops import rearrange, repeat
 from einops.layers.torch import Rearrange
 from  scipy import ndimage
 
-sys.path.append('../PNAS/')
+sys.path.append('./PNAS/')
 from PNASnet import *
 from genotypes import PNASNet
 import torch.nn.functional as nnf
-import smoothing 
 import numpy as np
 
 
