@@ -13,11 +13,13 @@ Project page and Supplementary material: https://ivrl.github.io/Tempsal/
 # Inference
 Download the model checkpoint from:
 https://drive.google.com/drive/folders/1W92oXYra_OPYkR1W56D80iDexWIR7f7Z?usp=sharing 
+
 Follow the instructions on inference.ipynb. This notebook provides predictions on temporal and image saliency together.
 
 # Data
 Download temporal saliency ground-truth saliency maps and fixations produced from the SALICON dataset :
 https://drive.google.com/drive/folders/1afangzz2JFxRfRkQ-shjnhp8OyJCXL3G?usp=drive_link
+
 Alternatively, you can use generate_volumes.py to produce temporal saliency slices in desired intervals&numbers.
 
 # Temporal saliency only
