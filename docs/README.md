@@ -6,11 +6,20 @@ An example of how human attention evolves over time. Top row: Temporal (shown in
 
 
 
-
 Paper: (https://arxiv.org/abs/2301.02315)
 
 Project page and Supplementary material: https://ivrl.github.io/Tempsal/
 
+# Inference
+Download the model checkpoint from:
+https://drive.google.com/drive/folders/1W92oXYra_OPYkR1W56D80iDexWIR7f7Z?usp=sharing 
+Follow the instructions on inference.ipynb
+
+# Data
+Download temporal saliency ground-truth saliency maps and fixations produced from the SALICON dataset :
+https://drive.google.com/drive/folders/1afangzz2JFxRfRkQ-shjnhp8OyJCXL3G?usp=drive_link
+
+# Temporal saliency only
 For temporal saliency training and predictions, see:
 https://github.com/LudoHoff/TemporalSaliencyPrediction
 
