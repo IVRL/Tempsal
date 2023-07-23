@@ -3,6 +3,7 @@
 ![teaser-colord](https://user-images.githubusercontent.com/16324609/226619656-7aca1b74-0746-4524-9a5b-cd71698d30ce.png)
 An example of how human attention evolves over time. Top row: Temporal (shown in orange) and image (shown in pink) saliency ground truth from the SALICON dataset. Bottom row: Our temporal and image saliency predictions. Each temporal saliency map $\mathcal{T}_i$, $i \in \{1,\ldots,5\}$ represents one second of observation time. Note that in $\mathcal{T}_1$, the chef is salient, while in  $\mathcal{T}_2$ and  $\mathcal{T}_3$, the food on the barbecue becomes the most salient region in this scene. We can predict the temporal saliency maps for each interval separately, or combine them to create a single, refined image saliency map for the entire observation period.  
 
+![til](https://github.com/IVRL/Tempsal/blob/1bcfecb7d15fe284b5125c929a31ca6465b5247a/docs/rowa%20(1).gif)
 
 
 
