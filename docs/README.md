@@ -7,7 +7,7 @@ An example of how human attention evolves over time. Top row: Temporal (shown in
 
 
 
-Paper: (https://arxiv.org/abs/2301.02315)
+Paper: (https://openaccess.thecvf.com/content/CVPR2023/papers/Aydemir_TempSAL_-_Uncovering_Temporal_Information_for_Deep_Saliency_Prediction_CVPR_2023_paper.pdf)
 
 Project page and Supplementary material: https://ivrl.github.io/Tempsal/
 
