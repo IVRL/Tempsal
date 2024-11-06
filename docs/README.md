@@ -9,7 +9,7 @@
 **📢 New Release: TensorFlow Weights**
 
 TensorFlow weights for TempSAL is now available! 🎉
-You can find them under the /tensorflow-tempsal folder.
+You can find them in [tensorflow-tempsal](https://github.com/baharay/tensorflow-tempsal/).
 
 ---
 
