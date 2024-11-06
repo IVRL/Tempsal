@@ -1,7 +1,15 @@
 
 # **🌟 TempSAL: Uncovering Temporal Information for Deep Saliency Prediction - CVPR 2023**
 
-[![Demo on Hugging Face Space](https://img.shields.io/badge/Demo-Hugging%20Face%20Space-blue?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/baharay/tempsal)
+[![Demo on Hugging Face Space](https://img.shields.io/badge/Demo-Hugging%20Face%20Space-blue?style=for-the-badge&logo=huggingface)](https://huggingface.co/spaces/baharay/tempsal) 
+**Check out our model online!**
+
+**📝 TL;DR** TempSAL introduces a novel approach to predicting saliency in dynamic scenes by leveraging temporal information to model how human attention shifts over time. Unlike conventional saliency prediction models that focus on static images, TempSAL predicts attention at different time intervals, capturing the evolving nature of salient regions as viewers focus on various aspects of a scene. Using a temporal model trained on the SALICON dataset, TempSAL achieves state-of-the-art performance in temporal saliency prediction. Key applications include video analysis, human-computer interaction, and attention-based scene understanding. The method can predict both individual time-step saliency maps and an aggregated saliency map for an entire sequence.
+
+**📢 New Release: TensorFlow Weights**
+
+TensorFlow weights for TempSAL is now available! 🎉
+You can find them under the /tensorflow-tempsal folder.
 
 ---
 
@@ -17,8 +25,15 @@
 ## 📄 **Research Paper**
 - [TempSAL - Uncovering Temporal Information for Deep Saliency Prediction - CVPR 2023](https://openaccess.thecvf.com/content/CVPR2023/papers/Aydemir_TempSAL_-_Uncovering_Temporal_Information_for_Deep_Saliency_Prediction_CVPR_2023_paper.pdf)
 
-## 🌐 **Project Page and Supplementary Material**
+## 🌐 **Project Page and Additional Material**
 - Visit the [TempSAL Project Page](https://ivrl.github.io/Tempsal/) for more resources and supplementary materials.
+
+- 📹 **[Video on YouTube](https://www.youtube.com/watch?v=1CrgRjzfjFQ)**: Watch an overview of TempSAL.
+
+- 📑 **[Slides (PDF)](https://cvpr.thecvf.com/media/cvpr-2023/Slides/21310.pdf)**: Download the presentation slides.
+  
+- 🖼️ **[Poster (PDF)](https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202023/21310.png?t=1685542528.2360375)**: View the poster displayed at CVPR 2023, summarizing our model, key experiments, and results.
+- 💻 **[Virtual Poster Session](https://cvpr.thecvf.com/virtual/2023/poster/21310)**: Access the virtual poster session for additional context.
 
 ---
 
@@ -48,7 +63,7 @@ pip install -r requirements.txt
   Alternatively, use `generate_volumes.py` to create temporal saliency slices with customizable intervals.
 
 ### 4. Temporal Saliency Only
-For projects focused on temporal saliency training and predictions, please refer to [TemporalSaliencyPrediction](https://github.com/LudoHoff/TemporalSaliencyPrediction) by Ludo Hoff.
+For projects focused on temporal saliency training and predictions, please refer to [TemporalSaliencyPrediction](https://github.com/LudoHoff/TemporalSaliencyPrediction) by Ludo Hoffstetter.
 
 ---
 
