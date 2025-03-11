@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ### 2. Inference
 
 1. **Download Model Checkpoint:**  
-   Download the pre-trained model from [Google Drive](https://drive.google.com/drive/folders/1W92oXYra_OPYkR1W56D80iDexWIR7f7Z?usp=sharing).
+   Download the pre-trained model from [Google Drive](https://drive.google.com/drive/folders/160WB1YrPAjNYy787jP1pmffl9Xv0gLw6?usp=sharing).
 
 2. **Run Inference:**  
    Follow instructions in `inference.ipynb` to generate predictions on both temporal and image saliency.
@@ -57,7 +57,7 @@ pip install -r requirements.txt
 ### 3. Data
 
 - **Download Ground-Truth Data**  
-  Temporal saliency ground-truth maps and fixation data from the SALICON dataset are available [here](https://drive.google.com/drive/folders/1afangzz2JFxRfRkQ-shjnhp8OyJCXL3G?usp=drive_link).
+  Temporal saliency ground-truth maps and fixation data from the SALICON dataset are available [here](https://drive.google.com/drive/folders/160WB1YrPAjNYy787jP1pmffl9Xv0gLw6?usp=sharing).
   
 - **Generate Custom Saliency Volumes**  
   Alternatively, use `generate_volumes.py` to create temporal saliency slices with customizable intervals.
